@@ -9,6 +9,8 @@
 // To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
 // This link also includes instructions on opting out of this behavior.
 
+const SC_NOT_FOUND = 404;
+
 const isLocalhost = Boolean(
     window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
@@ -19,7 +21,7 @@ const isLocalhost = Boolean(
     )
 );
 
-export default function register() {
+export function registerServiceWorker() {
     if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
         // The URL constructor is available in all browsers that support SW.
         const publicUrl = new URL(
@@ -84,7 +86,7 @@ function checkValidServiceWorker(swUrl: string) {
         .then(response => {
             // Ensure service worker exists, and that we really are getting a JS file.
             if (
-                response.status === 404 ||
+                response.status === SC_NOT_FOUND ||
                 response.headers.get('content-type')!.indexOf('javascript') === -1
             ) {
                 // No service worker found. Probably a different app. Reload the page.
@@ -105,7 +107,7 @@ function checkValidServiceWorker(swUrl: string) {
         });
 }
 
-export function unregister() {
+export function unregisterServiceWorker() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.ready.then(registration => {
             registration.unregister();
