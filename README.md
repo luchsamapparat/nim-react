@@ -4,6 +4,8 @@
 
 React-based client for [Nim game library](https://github.com/luchsamapparat/nim).
 
+[Demo](https://nim-game.azurewebsites.net/)
+
 ## Install
 
 ```
