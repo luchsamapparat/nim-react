@@ -1,5 +1,7 @@
 # Nim React
 
+[![Build Status](https://travis-ci.org/luchsamapparat/nim-react.svg?branch=master)](https://travis-ci.org/luchsamapparat/nim-react)
+
 React-based client for [Nim game library](https://github.com/luchsamapparat/nim).
 
 ## Install
