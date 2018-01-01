@@ -2,6 +2,8 @@
     "defaultSeverity": "error",
     "extends": "tslint-config-luchsamapparat",
     "rules": {
+        "quotemark": [true, "single", "avoid-escape", "jsx-double"],
+        "variable-name": false,
         "promise-function-async": false,
         "await-promise": false,
         "no-floating-promises": false,
