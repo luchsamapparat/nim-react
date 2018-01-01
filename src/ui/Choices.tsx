@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './choices.css';
 
 export interface ChoicesProps {
     name: string;
@@ -17,10 +16,10 @@ export const Choices: React.StatelessComponent<ChoicesProps> = ({ name, choices,
     return (
         <div className="choices">
             {choices.map((choice, key) => (
-                <label htmlFor={`${name}-${key}`} key={key}>
+                <span key={key}>
                     <input type="radio" name={name} id={`${name}-${key}`} value={choice.value} defaultChecked={choice.isDefault} onChange={() => onChange(choice.value)} />
-                    <span className="label">{choice.label}</span>
-                </label>
+                    <label htmlFor={`${name}-${key}`}>{choice.label}</label>
+                </span>
             ))}
         </div>
     );

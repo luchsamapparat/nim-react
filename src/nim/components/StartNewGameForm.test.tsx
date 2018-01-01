@@ -1,4 +1,4 @@
-import { Player, GameConfig } from '@luchsamapparat/nim';
+import { GameConfig, Player } from '@luchsamapparat/nim';
 import * as enzyme from 'enzyme';
 import * as React from 'react';
 import { PlayerSelection, PlayerSelectionProps } from './PlayerSelection';

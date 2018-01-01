@@ -1,0 +1,15 @@
+.remove-tokens-controls {
+    margin-top: 50px;
+}
+
+.remove-tokens-controls button {
+    font-size: 5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.remove-tokens-controls div {
+    margin-top: 20px;
+}

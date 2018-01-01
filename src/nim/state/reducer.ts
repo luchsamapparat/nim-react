@@ -1,6 +1,6 @@
 import { GameState, playRound, startGame } from '@luchsamapparat/nim';
 import { Dispatch } from 'react-redux';
-import { NimAction, PLAY_ROUND, START_GAME } from './actions';
+import { NimAction, PLAY_ROUND, RESET_GAME, START_GAME } from './actions';
 
 export type MapStateToProps<S, T> = (state: S) => Partial<T>;
 export type MapDispatchToProps<A, T> = (dispatch: Dispatch<A>) => Partial<T>;
@@ -19,6 +19,11 @@ export function nimReducer(state: NimState = initialState, action: NimAction): N
             return {
                 ...state,
                 game: startGame(action.config)
+            };
+        case RESET_GAME:
+            return {
+                ...state,
+                game: null
             };
         case PLAY_ROUND:
             return {

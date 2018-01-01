@@ -1,6 +1,6 @@
 // tslint:disable:no-magic-numbers
 import { GameConfig, GameState, Player, StrategyName } from '@luchsamapparat/nim';
-import { playRound, startGame } from './actions';
+import { playRound, resetGame, startGame } from './actions';
 import { NimState, initialState, nimReducer } from './reducer';
 
 export const getMockGameConfig = (): GameConfig => ({
@@ -68,6 +68,12 @@ describe('nimReducer', () => {
 
             expect(heapSize).toBeLessThan(expectedHeapSize);
             expect(turns).toHaveLength(2);
+        });
+    });
+
+    describe('ResetGameAction', () => {
+        test('it resets the game state', () => {
+            expect(nimReducer(state, resetGame())).toEqual(initialState);
         });
     });
 

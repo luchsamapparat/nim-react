@@ -16,7 +16,7 @@ describe('TurnList', () => {
 
         expect(turnList.find(Turn).length).toBe(turns.length);
 
-        turns.forEach((turn, index) => {
+        [...turns].reverse().forEach((turn, index) => {
             const turnProps: TurnProps = turnList.find(Turn).at(index).props();
             expect(turnProps.player).toBe(turn.player);
             expect(turnProps.tokensRemoved).toBe(turn.tokensRemoved);

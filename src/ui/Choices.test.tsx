@@ -19,18 +19,18 @@ describe('Choices', () => {
     test('it renders the given options as radio buttons', () => {
         choiceData.map((choice, index) => {
             const label = choices.find('label').at(index);
-            const radioButton = label.find('input');
+            const radioButton = choices.find('input').at(index);
 
             expect(radioButton.props().value).toBe(choice.value);
-            expect((radioButton as any).props().defaultChecked).toBe(choice.isDefault);
-            expect(label.find('span').text()).toBe(choice.label);
+            expect(radioButton.props().defaultChecked).toBe(choice.isDefault);
+            expect(label.text()).toBe(choice.label);
         });
     });
 
     it('notifies about value changes via onChange', () => {
         const index = choiceData.length - 1;
 
-        choices.find('input[type="radio"]').at(index).simulate('change');
+        choices.find('input').at(index).simulate('change');
 
         expect(onChangeSpy).toHaveBeenCalledWith(choiceData[index].value);
     });

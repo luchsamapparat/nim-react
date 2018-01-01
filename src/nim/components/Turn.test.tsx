@@ -1,6 +1,7 @@
 import { Player } from '@luchsamapparat/nim';
 import * as enzyme from 'enzyme';
 import * as React from 'react';
+import { toFriendlyPlayerName } from '../state/util';
 import { Turn } from './Turn';
 
 describe('Turn', () => {
@@ -11,7 +12,7 @@ describe('Turn', () => {
         const turn: enzyme.ShallowWrapper = enzyme.shallow(<Turn player={expectedPlayer} tokensRemoved={expectedTokensRemoved} />);
 
         const words = turn.find('.turn').text().split(' ');
-        expect(words).toContain(expectedPlayer);
+        expect(words).toContain(toFriendlyPlayerName(expectedPlayer));
         expect(words).toContain(expectedTokensRemoved.toString());
     });
 

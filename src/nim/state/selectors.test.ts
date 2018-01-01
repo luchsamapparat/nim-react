@@ -1,6 +1,6 @@
 import { Player, StrategyName } from '@luchsamapparat/nim';
 import { NimState } from './reducer';
-import { getHeapSize, getTokensAllowedToRemoveOptions, getTurns, getWinner, isFinished } from './selectors';
+import { gameHasStarted, gameIsFinished, getHeapSize, getTokensAllowedToRemoveOptions, getTurns, getWinner } from './selectors';
 
 const state: NimState = {
     game: {
@@ -58,17 +58,31 @@ describe('getHeapSize', () => {
     });
 });
 
-describe('isFinished', () => {
+describe('gameIsFinished', () => {
     test('it returns true when the current game has a winner', () => {
-        expect(isFinished(gameFinishedState)).toBe(true);
+        expect(gameIsFinished(gameFinishedState)).toBe(true);
     });
 
     test('it returns false when the current game has no winner yet', () => {
-        expect(isFinished(state)).toBe(false);
+        expect(gameIsFinished(state)).toBe(false);
     });
 
     test('it returns false when no game has been started yet', () => {
-        expect(isFinished(noGameStartedState)).toBe(false);
+        expect(gameIsFinished(noGameStartedState)).toBe(false);
+    });
+});
+
+describe('gameHasStarted', () => {
+    test('it returns true when there is a current game and no winner', () => {
+        expect(gameHasStarted(state)).toBe(true);
+    });
+
+    test('it returns true when the current game has a winner', () => {
+        expect(gameHasStarted(gameFinishedState)).toBe(true);
+    });
+
+    test('it returns false when no game has been started yet', () => {
+        expect(gameHasStarted(noGameStartedState)).toBe(false);
     });
 });
 

@@ -1,5 +1,6 @@
 import { isEmpty, toNumber } from 'lodash';
 import * as React from 'react';
+import './removeTokensControls.css';
 
 export interface RemoveTokensControlsProps {
     choices: number[];
@@ -13,9 +14,12 @@ export const RemoveTokensControls: React.StatelessComponent<RemoveTokensControls
 
     return (
         <div className="remove-tokens-controls">
-            {choices.map(
-                (tokensToRemove, key) => <button onClick={() => onRemoveTokens(toNumber(tokensToRemove))} key={key}>{tokensToRemove}</button>
-            )}
+            How many tokens do you want to remove?
+            <div>
+                {choices.map(
+                    (tokensToRemove, key) => <button onClick={() => onRemoveTokens(toNumber(tokensToRemove))} key={key}>{tokensToRemove}</button>
+                )}
+            </div>
         </div>
     );
 };

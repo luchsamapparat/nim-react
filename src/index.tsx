@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import './index.css';
 import { NimGame } from './nim/NimGame';
 import { NimState, nimReducer } from './nim/state/reducer';
 import { registerServiceWorker } from './registerServiceWorker';

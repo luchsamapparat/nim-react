@@ -1,0 +1,14 @@
+.tokens {
+    margin-top: 150px;
+}
+
+.tokens .token {
+    background-image: url('./match.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 150px;
+    width: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
