@@ -2,6 +2,7 @@
  "name": "Nim",
  "background_color": "#334D5C",
  "theme_color": "#C16842",
+ "start_url": "https://nim-game.azurewebsites.net",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
