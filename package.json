@@ -24,7 +24,7 @@
   "homepage": "https://nim-game.azurewebsites.net/",
   "dependencies": {
     "@luchsamapparat/nim": "^5.2.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "raf": "^3.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
